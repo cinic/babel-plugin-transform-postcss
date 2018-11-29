@@ -18,7 +18,9 @@ import {
 // long & per-process).
 const projectId = process.cwd().toLowerCase().replace(/[^a-z]/ig, '');
 const socketName = `bptp-${projectId}.sock`;
-const socketPath = join('/tmp', socketName);
+const socketPath = process.platform === 'win32'
+  ? 7979
+  : join('/tmp', socketName);
 const tmpPath = join('/tmp', `bptp-${projectId}`);
 
 const nodeExecutable = process.argv[0];
