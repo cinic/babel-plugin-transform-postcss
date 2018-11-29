@@ -4,6 +4,8 @@
 .flowconfig
 .nyc_output
 .travis.yml
+.idea/
+.npmrc
 coverage/
 src/
 test/
